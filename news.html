@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/25.png">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYN ZONE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="new.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="sidebar">
+        <header>
+            <div class="logo">NYN ZONE</div>
+            <button class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="news.html"><i class="fas fa-newspaper"></i> NEWS</a></li>
+                <li><a href="contact_us.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="about_us.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://web.facebook.com/profile.php?id=61562180345007" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61562180345007" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://www.instagram.com/nzonentertainment/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@jz_astra" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/ejyn18" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.threads.net/@nzonentertainment?xmt=AQGzhbbJgn3rNzWoHwQhLaTr7YZzNXDz-Qs1DgbItZLPTyk" target="_blank"><i class="fas fa-link"></i></a>
+        </div>
+    </div>
+
+  
+      
+                <div class="card" id="news-card">
+                    <h2 id="news-title">Latest News</h2>
+                    <div class="news-grid" id="news-grid">
+                        <!-- News items will be dynamically added here -->
+                    </div>
+                </div>
+           
+
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024. All rights reserved.</p>
+            <div class="logo">NYN ZONE</div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            const newsGrid = document.getElementById('news-grid');
+            const newsData = [
+                {
+                    title: 'News Title 1',
+                    content: 'This is the content of the first news item.',
+                    imageUrl: 'images/25.png'
+                },
+                {
+                    title: 'News Title 2',
+                    content: 'This is the content of the second news item.',
+                     imageUrl: 'images/25.png'
+                },
+                {
+                    title: 'News Title 3',
+                    content: 'This is the content of the third news item.',
+                     imageUrl: 'images/25.png'
+                }
+            ];
+
+            newsData.forEach(news => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+
+                const newsImage = document.createElement('img');
+                newsImage.src = news.imageUrl;
+                newsImage.alt = news.title;
+
+                const newsTitle = document.createElement('h3');
+                newsTitle.textContent = news.title;
+
+                const newsContent = document.createElement('p');
+                newsContent.textContent = news.content;
+
+                newsItem.appendChild(newsImage);
+                newsItem.appendChild(newsTitle);
+                newsItem.appendChild(newsContent);
+
+                newsGrid.appendChild(newsItem);
+            });
+        });
+    </script>
+</body>
+</html>
