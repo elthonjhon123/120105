@@ -32,7 +32,7 @@ body, input, button {
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    z-index: 2000; /* Ensure it is above all other content */
+    z-index: 2000;
 }
 
 /* Sidebar styles */
